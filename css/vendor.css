@@ -170,35 +170,6 @@ pre[class*=language-] {
   z-index     : 0.1;
 }
 
-/* Media query cho màn hình nhỏ hơn 1200px */
-@media (max-width: 1200px) {
-  .swiper-container {
-    width: 90%;
-  }
-}
-
-/* Media query cho màn hình nhỏ hơn 992px */
-@media (max-width: 992px) {
-  .swiper-container {
-    width: 80%;
-  }
-}
-
-/* Media query cho màn hình nhỏ hơn 768px */
-@media (max-width: 768px) {
-  .swiper-container {
-    flex-direction: column; /* Sắp xếp các ảnh theo cột */
-    gap: 0.5rem; /* Giảm khoảng cách giữa các ảnh */
-  }
-}
-
-/* Media query cho màn hình nhỏ hơn 576px */
-@media (max-width: 576px) {
-  .swiper-container {
-    width: 100%;
-    padding: 0 1rem; /* Thêm padding để có khoảng cách giữa container và viền màn hình */
-  }
-}
 
 
 .swiper-container img {
