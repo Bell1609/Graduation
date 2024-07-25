@@ -40,28 +40,32 @@
    
    /* preloader
     * -------------------------------------------------- */
-    const ssPreloader = function() {
-
-        const siteBody = document.querySelector('body');
-        const preloader = document.querySelector('#preloader');
-        if (!preloader) return;
-
-        html.classList.add('ss-preload');
+   const ssPreloader = function() {
+    const siteBody = document.querySelector('body');
+    const preloader = document.querySelector('#preloader');
+    
+    if (!preloader) return;
+    
+    // Thêm lớp 'ss-preload' ngay khi trang bắt đầu tải
+    document.documentElement.classList.add('ss-preload');
+    
+    // Đảm bảo rằng các thao tác tiếp theo chỉ chạy khi trang đã hoàn tất tải
+    window.addEventListener('load', () => {
         
-        window.addEventListener('load', function() {
-            html.classList.remove('ss-preload');
-            html.classList.add('ss-loaded');
-            
-            preloader.addEventListener('transitionend', function afterTransition(e) {
-                if (e.target.matches('#preloader'))  {
-                    siteBody.classList.add('ss-show');
-                    e.target.style.display = 'none';
-                    preloader.removeEventListener(e.type, afterTransition);
-                }
-            });
+    document.documentElement.classList.remove('ss-preload');
+    document.documentElement.classList.add('ss-loaded');
+        
+        // Xử lý sự kiện transition kết thúc
+        preloader.addEventListener('transitionend', function afterTransition(e) {
+            if (e.target === preloader) {
+                siteBody.classList.add('ss-show');
+                preloader.style.display = 'none';
+                preloader.removeEventListener('transitionend', afterTransition);
+            }
         });
-
-    }; // end ssPreloader
+    });
+};
+// end ssPreloader
 
 
    /* nav menu
