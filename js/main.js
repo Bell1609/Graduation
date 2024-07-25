@@ -3,13 +3,6 @@
 
     'use strict';
 
-
-    /*button-love*/
-    const emptyHeart = document.querySelector('.button-love');
-    emptyHeart.addEventListener('click', function() {
-        emptyHeart.classList.toggle('active');
-    });
-
     /*button-congratulation*/
     document.querySelector('button.congratulation').addEventListener('click', function() {
     document.getElementById('about').scrollIntoView({ behavior: 'smooth' });

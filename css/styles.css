@@ -361,7 +361,6 @@ button.memory {
     padding: 1.5em 1em;
     width: 12em;
     height: 3em;
-    left:40px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     position: relative;
@@ -424,196 +423,12 @@ button.memory {
       blinkCursor 0.5s step-end infinite alternate;
     margin-top: 2px;
   }
-/*------Button-love-------*/ 
-.button-love {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 35px 20px; /* Adjust padding for adequate size */
-    box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    background-color: #e8e8e8;
-    border-color: #ffe2e2;
-    border-style: solid;
-    border-width: 9px;
-    border-radius: 35px;
-    transition: transform 400ms cubic-bezier(.68,-0.55,.27,2.5), 
-                border-color 400ms ease-in-out,
-                background-color 400ms ease-in-out;
-    word-spacing: -2px;
-    position: relative; 
-    top: 13%; 
-    left: 81.5%; 
-    z-index: 10; /* Ensure it is above other elements */
-}
-  
-  @keyframes movingBorders {
-    0% {
-      border-color: #fce4e4;
-    }
-  
-    50% {
-      border-color: #ffd8d8;
-    }
-  
-    90% {
-      border-color: #fce4e4;
-    }
-  }
-  
-  .button-love:hover {
-    background-color: #fa8a8a;
-    transform: scale(105%);
-    animation: movingBorders 3s infinite;
-  }
-  
-  .filled,
-  .empty {
-    fill: rgb(255, 255, 255);
-    transition: opacity 100ms ease-in-out;
-  }
-  
-  .filled {
-    position: absolute;
-    opacity: 0;
-  }
-  .button-love.active  {
-    background-color:  rgb(248, 136, 136); 
-    }
-  @keyframes beatingHeart {
-    0% {
-      transform: scale(1);
-    }
-  
-    15% {
-      transform: scale(1.15);
-    }
-  
-    30% {
-      transform: scale(1);
-    }
-  
-    45% {
-      transform: scale(1.15);
-    }
-  
-    60% {
-      transform: scale(1);
-    }
-  }
-  
-  .button-love:hover .empty {
-    opacity: 0;
-  }
-  .button-love:hover .filled {
-    opacity: 1;
-    animation: beatingHeart 1.2s infinite;
-  }
-/*-----End Button Love--------*/ 
-.loader-start {
-    user-select: none;
-    margin: 55rem 0 0 85%;
-  }
-  
-  .star {
-    opacity: 0;
-    fill: #ff7f7f;
-    animation: loader-start 2s infinite alternate;
-  }
-  
-  .star2 {
-    height: 20px;
-    margin-left: -10px;
-    animation-delay: 0.25s;
-  }
-  
-  .star3 {
-    height: 16px;
-    margin-left: -15px;
-    animation-delay: 0.5s;
-  }
-  
-  @keyframes loader-start {
-    0% {
-      opacity: 0;
-      transform: translateY(0) translateX(50px) rotate (0deg);
-    }
-    10% {
-      opacity: 0;
-      transform: translateY(0) translateX(50px) rotate(0deg);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(-20px) translateX(0) rotate(360deg);
-    }
-  }
-/*------End loading start-------*/
 
 /*------img-about------*/
-.gallery-img {
-    --d: 13s; /* duration */
-    right:20px;
-    top: 10px;
-    display: grid;
-    width: 300px;
-  }
-  
-  .gallery-img > img {
-    grid-area: 1 / 1;
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border: 10px solid #f2f2f2;
-    box-shadow: 0 0 4px #0007;
-    z-index: 2;
-    animation: 
-      slide var(--d) infinite,
-      z-order var(--d) infinite steps(1);
-  }
-  
-  .gallery-img img:last-child {
-    animation-name: slide, z-order-last;
-  }
-  
-  /* Chuyển đổi vòng lặp thành các quy tắc CSS cụ thể */
-  .gallery-img > img:nth-child(1) {
-    animation-delay: calc((1 - 1) / 4 * var(--d));
-    --r: -20deg;
-  }
-  .gallery-img > img:nth-child(2) {
-    animation-delay: calc((1 - 2) / 4 * var(--d));
-    --r: 10deg;
-  }
-  .gallery-img > img:nth-child(3) {
-    animation-delay: calc((1 - 3) / 4 * var(--d));
-    --r: -8deg;
-  }
-  .gallery-img > img:nth-child(4) {
-    animation-delay: calc((1 - 4) / 4 * var(--d));
-    --r: 15deg;
-    }
-  
-  @keyframes slide {
-    10%  {transform: translateX(120%) rotate(var(--r))}
-    0%,
-    20% {transform: translateX(0%)   rotate(var(--r))}
-  }
-  
-  @keyframes z-order {
-    10%,
-    20% {z-index: 1}
-    80% {z-index: 2}
-  }
-  
-  @keyframes z-order-last {
-    10%,
-    20% {z-index: 1}
-    80% {z-index: 2}
-  }
+
 
 /*-------------*/ 
-.container{
-    display: flex;
-}
+
 /*-------------*/ 
 :root {
     --font-1: "Newsreader", Serif;
@@ -4163,15 +3978,7 @@ body.menu-is-open {
     line-height: 1;
     text-align : left;
     position   : relative;
-}
-
-.s-intro__desc {
-    width : min(92%, 60rem);
-    color: #000;
-    text-align: left;
-    margin-top: 4rem;
-    margin-left: 0.5em;
-
+    margin     : 5px;
 }
 
 /* --------------------------------------------------------------------
