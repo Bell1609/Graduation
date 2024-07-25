@@ -1,10 +1,6 @@
 @charset "UTF-8";
 
 /* =================================================================== 
- * Maillard Main Stylesheet
- * Template Ver. 1.0.0
- * 08-03-2023
- * ------------------------------------------------------------------
  *
  * TOC:
  * # SETTINGS
@@ -5416,11 +5412,12 @@ body.menu-is-open {
     }
 }
 
+/* Các quy tắc cho màn hình có chiều rộng tối đa 800px */
 @media screen and (max-width: 800px) {
     .content-block .column {
-        flex        : none;
-        width       : 100%;
-        margin-left : 0;
+        flex: none;
+        width: 100%;
+        margin-left: 0;
         margin-right: 0;
     }
 
@@ -5433,6 +5430,7 @@ body.menu-is-open {
     }
 }
 
+/* Các quy tắc cho màn hình có chiều rộng tối đa 600px */
 @media screen and (max-width: 600px) {
     .menu-list__item h4 {
         font-size: var(--text-md);
@@ -5447,12 +5445,14 @@ body.menu-is-open {
     }
 }
 
+/* Các quy tắc cho màn hình có chiều rộng tối đa 500px */
 @media screen and (max-width: 500px) {
     .menu-list__item p {
         font-size: calc(var(--text-size) * 0.75);
     }
 }
 
+/* Các quy tắc cho màn hình có chiều rộng tối đa 400px */
 @media screen and (max-width: 400px) {
     .menu-list__item-desc {
         padding-right: var(--gutter);
