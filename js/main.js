@@ -46,14 +46,14 @@
     
     if (!preloader) return;
     
-    // Thêm lớp 'ss-preload' ngay khi trang bắt đầu tải
-    document.documentElement.classList.add('ss-preload');
+        // Thêm lớp 'ss-preload' ngay khi trang bắt đầu tải
+        document.documentElement.classList.add('ss-preload');
     
-    // Đảm bảo rằng các thao tác tiếp theo chỉ chạy khi trang đã hoàn tất tải
-    window.addEventListener('load', () => {
+        // Đảm bảo rằng các thao tác tiếp theo chỉ chạy khi trang đã hoàn tất tải
+        window.addEventListener('load', () => {
         
-    document.documentElement.classList.remove('ss-preload');
-    document.documentElement.classList.add('ss-loaded');
+        document.documentElement.classList.remove('ss-preload');
+        document.documentElement.classList.add('ss-loaded');
         
         // Xử lý sự kiện transition kết thúc
         preloader.addEventListener('transitionend', function afterTransition(e) {
