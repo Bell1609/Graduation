@@ -102,6 +102,50 @@
               40px 40px 0px #f48994, 
               45px 45px 0px #fc7785
   }
+  /*------------img-about------------*/
+  .image-about {
+    width: 700px;
+    display: flex;
+    justify-content: flex-start; /* Đẩy phần tử con sang trái */
+}
+
+.image-about img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của khung chứa */
+    height: auto; /* Đảm bảo tỷ lệ hình ảnh không bị biến dạng */
+    object-fit: cover; /* Cắt hình ảnh nếu cần để phù hợp với khung chứa */
+}
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .image-about {
+        width: 600px; /* Điều chỉnh chiều rộng cho màn hình lớn */
+    }
+}
+
+@media (max-width: 992px) {
+    .image-about {
+        width: 500px; /* Điều chỉnh chiều rộng cho màn hình vừa */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-about {
+        width: 100%; /* Chiếm toàn bộ chiều rộng của màn hình nhỏ */
+    }
+
+    .image-about img {
+        object-fit: contain; /* Điều chỉnh để hình ảnh không bị cắt trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 576px) {
+    .image-about {
+        width: 100%; /* Chiếm toàn bộ chiều rộng của màn hình rất nhỏ */
+    }
+
+    .image-about img {
+        object-fit: contain; /* Điều chỉnh để hình ảnh không bị cắt trên màn hình rất nhỏ */
+    }
+}
 /*-------------*/  
 
 div#gallery-memory {
@@ -262,74 +306,6 @@ button.congratulation {
     transition: transform 2s ease-in-out, box-shadow 2s ease-in-out;
     pointer-events: none;
    }
-/*---memory-button-----*/
-button.memory {
-    font-weight: 600;
-    color: #382b22;
-    text-transform: uppercase;
-    padding: 1.25em 2em;
-    background: #fff0f0;
-    border: 2px solid #b18597;
-    border-radius: 0.75em;
-    position: relative;
-    left: 17%;
-    display: flex;
-    align-items: center;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
-    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
-   }
-   
-   button.memory::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #f9c4d2;
-    border-radius: inherit;
-    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
-    box-shadow: 0 0 0 2px #fcaece, 0 0.625em 0 0 #ffe3e2;
-    -webkit-transform: translate3d(0, 0.75em, -1em);
-    transform: translate3d(0, 0.75em, -1em);
-    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-    pointer-events: none;
-    }
-   
-   button.memory:hover {
-    background: #ff97ee;
-    color: #ffffff;
-    -webkit-transform: translate(0, 0.25em);
-    transform: translate(0, 0.25em);
-   }
-   
-   button.memory:hover::before {
-    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
-    box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
-    -webkit-transform: translate3d(0, 0.5em, -1em);
-    transform: translate3d(0, 0.5em, -1em);
-   }
-   
-   button.memory:active {
-    background: #ffe9e9;
-    -webkit-transform: translate(0em, 0.75em);
-    transform: translate(0em, 0.75em);
-   }
-   
-   button.memory:active::before {
-    -webkit-box-shadow: 0 0 0 2px #ff92bf, 0 0 #ffe3e2;
-    box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
-    -webkit-transform: translate3d(0, 0, -1em);
-    transform: translate3d(0, 0, -1em);
-    transition: transform 2s ease-in-out, box-shadow 2s ease-in-out;
-    pointer-events: none;
-   }
-
-
 
 /*-------------*/  
   @keyframes blinkCursor {
@@ -3765,39 +3741,40 @@ body.menu-is-open {
     background-size    : cover;
 }
 
-.s-intro__bg::before {
-    display       : block;
-    content       : "";
-    position      : absolute;
-    top           : 0;
-    left          : 0;
-    right         : 0;
-    bottom        : 0;
-    width         : 100%;
-    height        : 100%;
-    background    : rgb(255, 254, 254);
-    pointer-events: none;
-    opacity       : 0.3;
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .s-intro__bg {
+        background-position: top; /* Điều chỉnh vị trí hình nền cho màn hình lớn */
+    }
 }
 
-.s-intro__bg::after {
-    display       : block;
-    content       : "";
-    position      : absolute;
-    top           : 0;
-    left          : 0;
-    right         : 0;
-    bottom        : 0;
-    width         : 100%;
-    height        : 100%;
-    background    : linear-gradient(90deg, rgb(255, 255, 255) 2%, rgb(255, 253, 253) 100%);
-    pointer-events: none;
-    opacity       : 0.75;
+@media (max-width: 992px) {
+    .s-intro__bg {
+        background-size: contain; /* Điều chỉnh kích thước hình nền cho màn hình vừa */
+    }
 }
 
-.s-intro__bg::before,
-.s-intro__bg::after {
-    mix-blend-mode: multiply;
+@media (max-width: 768px) {
+    .s-intro__bg {
+        background-image: url(../images/BG-small.png); /* Thay đổi hình nền cho màn hình nhỏ */
+        background-size: cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .s-intro__bg {
+        background-image: url(../images/BG-smallest.png); /* Thay đổi hình nền cho màn hình rất nhỏ */
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .s-intro__bg {
+        background-image: url(../images/BG-smallest.png); /* Sử dụng hình nền nhỏ nhất cho điện thoại */
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 /* --------------------------------------------------------------------
@@ -3994,7 +3971,7 @@ body.menu-is-open {
 }
 
 @media screen and (max-width: 500px) {
-    .s-intro {
+    .s-intro{
         --content-padding-top: max(10rem, 8vh);
     }
 }

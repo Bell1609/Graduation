@@ -17,23 +17,6 @@
         this.style.transform = 'translate(0em, 0em)';
     });
 
-    /*button-outmemory*/
-    document.querySelector('button.memory').addEventListener('click', function() {
-    document.getElementById('memory').scrollIntoView({ behavior: 'smooth' });
-    });
-    document.querySelector('button.memory').addEventListener('mousedown', function() {
-        this.style.background = '#ffe9e9';
-        this.style.transform = 'translate(0em, 0.75em)';
-    });
-    
-    document.querySelector('button.memory').addEventListener('mouseup', function() {
-        this.style.background = '#fff0f0';
-        this.style.transform = 'translate(0em, 0em)';
-    });
-
-
-
-
    /*---respomsive*/
 
 
