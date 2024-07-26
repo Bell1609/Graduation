@@ -2269,132 +2269,6 @@ img,
 }
 
 
-/* ===================================================================
- * # FORM
- *
- *
- * ------------------------------------------------------------------- */
-fieldset {
-    border: none;
-}
-
-input[type=email],
-input[type=number],
-input[type=search],
-input[type=text],
-input[type=tel],
-input[type=url],
-input[type=password],
-textarea,
-select {
-    --input-height     : var(--vspace-2);
-    --input-line-height: var(--vspace-1);
-    --input-vpadding   : calc((var(--input-height) - var(--input-line-height)) / 2);
-    display            : block;
-    height             : var(--input-height);
-    padding            : var(--input-vpadding) 0 calc(var(--input-vpadding) - 1px);
-    border             : 0;
-    outline            : 0;
-    color              : var(--color-text-light);
-    font-family        : var(--font-3);
-    font-size          : calc(var(--text-size) * 0.7273);
-    line-height        : var(--input-line-height);
-    max-width          : 100%;
-    background         : transparent;
-    border-bottom      : 1px solid var(--color-text-light);
-    transition         : all 0.3s ease-in-out;
-}
-
-.ss-custom-select {
-    position: relative;
-    padding : 0;
-}
-
-.ss-custom-select select {
-    -webkit-appearance: none;
-    -moz-appearance   : none;
-    appearance        : none;
-    text-indent       : 0.01px;
-    text-overflow     : "";
-    margin            : 0;
-    vertical-align    : middle;
-    line-height       : var(--vspace-1);
-}
-
-.ss-custom-select select option {
-    padding-left    : 2rem;
-    padding-right   : 2rem;
-    background-color: var(--color-body);
-}
-
-.ss-custom-select select::-ms-expand {
-    display: none;
-}
-
-.ss-custom-select::after {
-    border-bottom   : 1px solid rgb(20, 20, 20);
-    border-right    : 1px solid rgb(20, 20, 20);
-    content         : "";
-    display         : block;
-    height          : 8px;
-    width           : 8px;
-    margin-top      : -7px;
-    pointer-events  : none;
-    position        : absolute;
-    right           : 2.4rem;
-    top             : 50%;
-    transition      : all 0.15s ease-in-out;
-    transform-origin: 66% 66%;
-    transform       : rotate(45deg);
-}
-
-textarea {
-    min-height: calc(8 * var(--space));
-}
-
-input[type=email]:focus,
-input[type=number]:focus,
-input[type=search]:focus,
-input[type=text]:focus,
-input[type=tel]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-textarea:focus,
-select:focus {
-    color        : var(--color-text);
-    border-bottom: 1px solid var(--color-1);
-}
-
-label,
-legend {
-    display      : flex;
-    align-items  : flex-start;
-    font-family  : var(--font-3);
-    font-weight  : 600;
-    font-size    : var(--text-xs);
-    line-height  : var(--vspace-0_625);
-    margin-bottom: var(--vspace-0_25);
-    color        : var(--color-text-dark);
-}
-
-input[type=checkbox],
-input[type=radio] {
-    display: inline-block;
-}
-
-label>.label-text {
-    display    : inline-block;
-    margin-left: 1rem;
-    font-family: var(--font-3);
-    line-height: inherit;
-}
-
-label>input[type=checkbox],
-label>input[type=radio] {
-    margin  : 0;
-    position: relative;
-    top     : 0.4rem;
-}
 
 /* ------------------------------------------------------------------- 
  * ## style placeholder text
@@ -4032,7 +3906,6 @@ body.menu-is-open {
 .ss-home .s-intro__bg,
 .ss-home .s-intro__pretitle,
 .ss-home .s-intro__title,
-.ss-home .s-intro__desc,
 .ss-home .s-intro__scroll-down {
     transition-timing-function: cubic-bezier(0.28, 0.12, 0.22, 1);
     transition-duration       : 0.6s;
@@ -4047,8 +3920,7 @@ body.menu-is-open {
 }
 
 .ss-home .s-intro__pretitle,
-.ss-home .s-intro__title,
-.ss-home .s-intro__desc {
+.ss-home .s-intro__title {
     transition-property: opacity, transform;
     transform          : translateY(150px);
 }
@@ -4064,10 +3936,8 @@ body.menu-is-open {
 
 .no-js .ss-home .s-intro__pretitle,
 .no-js .ss-home .s-intro__title,
-.no-js .ss-home .s-intro__desc,
 .ss-show .ss-home .s-intro__pretitle,
-.ss-show .ss-home .s-intro__title,
-.ss-show .ss-home .s-intro__desc {
+.ss-show .ss-home .s-intro__title {
     opacity  : 1;
     transform: translateY(0);
 }
@@ -4082,10 +3952,7 @@ body.menu-is-open {
     transition-delay: 0.6s;
 }
 
-.no-js .ss-home .s-intro__desc,
-.ss-show .ss-home .s-intro__desc {
-    transition-delay: 0.9s;
-}
+
 
 .no-js .ss-home .s-intro__scroll-down,
 .ss-show .ss-home .s-intro__scroll-down {
