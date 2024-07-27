@@ -3226,6 +3226,8 @@ body.menu-is-open {
  * -------------------------------------------------------------------- */
 .s-header__logo {
     z-index : 3;
+    height: auto;
+    width: 70px;
     position: relative;
 }
 
@@ -3723,9 +3725,22 @@ body.menu-is-open {
     position                : relative;
 }
 
+
 /* --------------------------------------------------------------------
  * ## intro bg
  * -------------------------------------------------------------------- */
+ .s-intro {
+    --content-padding-top   : max(12rem, 10vh);
+    --content-padding-bottom: 8rem;
+    --content-min-height    : calc(var(--vspace-1) * 26);
+    z-index                 : 2;
+    background-color        : var(--color-gray-19);
+    width                   : 100%;
+    height                  : max(var(--content-min-height), 100vh);
+    overflow                : hidden;
+    position                : relative;
+}
+
 .s-intro__bg {
     display            : block;
     position           : absolute;
@@ -3743,18 +3758,30 @@ body.menu-is-open {
 
 /* Responsive styles */
 @media (max-width: 1200px) {
+    .s-intro {
+        --content-padding-top   : max(10rem, 8vh);
+        --content-padding-bottom: 6rem;
+    }
     .s-intro__bg {
         background-position: top; /* Điều chỉnh vị trí hình nền cho màn hình lớn */
     }
 }
 
 @media (max-width: 992px) {
+    .s-intro {
+        --content-padding-top   : max(8rem, 6vh);
+        --content-padding-bottom: 4rem;
+    }
     .s-intro__bg {
         background-size: contain; /* Điều chỉnh kích thước hình nền cho màn hình vừa */
     }
 }
 
 @media (max-width: 768px) {
+    .s-intro {
+        --content-padding-top   : max(6rem, 4vh);
+        --content-padding-bottom: 3rem;
+    }
     .s-intro__bg {
         background-image: url(../images/BG-small.png); /* Thay đổi hình nền cho màn hình nhỏ */
         background-size: cover;
@@ -3762,6 +3789,10 @@ body.menu-is-open {
 }
 
 @media (max-width: 576px) {
+    .s-intro {
+        --content-padding-top   : max(4rem, 3vh);
+        --content-padding-bottom: 2rem;
+    }
     .s-intro__bg {
         background-image: url(../images/BG-smallest.png); /* Thay đổi hình nền cho màn hình rất nhỏ */
         background-size: cover;
@@ -3770,12 +3801,17 @@ body.menu-is-open {
 }
 
 @media (max-width: 480px) {
+    .s-intro {
+        --content-padding-top   : max(3rem, 2vh);
+        --content-padding-bottom: 1rem;
+    }
     .s-intro__bg {
         background-image: url(../images/BG-smallest.png); /* Sử dụng hình nền nhỏ nhất cho điện thoại */
         background-size: cover;
         background-position: center;
     }
 }
+
 
 /* --------------------------------------------------------------------
  * ## intro content
