@@ -21,20 +21,19 @@
 
 
    
-   /* preloader
+/* preloader
     * -------------------------------------------------- */
-   const ssPreloader = function() {
+const ssPreloader = function() {
     const siteBody = document.querySelector('body');
     const preloader = document.querySelector('#preloader');
     
     if (!preloader) return;
     
-        // Thêm lớp 'ss-preload' ngay khi trang bắt đầu tải
-        document.documentElement.classList.add('ss-preload');
+    // Thêm lớp 'ss-preload' ngay khi trang bắt đầu tải
+    document.documentElement.classList.add('ss-preload');
     
-        // Đảm bảo rằng các thao tác tiếp theo chỉ chạy khi trang đã hoàn tất tải
-        window.addEventListener('load', () => {
-        
+    // Đảm bảo rằng các thao tác tiếp theo chỉ chạy khi trang đã hoàn tất tải
+    window.addEventListener('load', () => {
         document.documentElement.classList.remove('ss-preload');
         document.documentElement.classList.add('ss-loaded');
         
@@ -46,6 +45,14 @@
                 preloader.removeEventListener('transitionend', afterTransition);
             }
         });
+
+        // Trường hợp transition không hoạt động hoặc bị lỗi
+        setTimeout(() => {
+            if (!preloader.style.display === 'none') {
+                siteBody.classList.add('ss-show');
+                preloader.style.display = 'none';
+            }
+        }, 3000); // thời gian chờ tối đa, có thể điều chỉnh
     });
 };
 // end ssPreloader
